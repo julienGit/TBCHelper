@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'TBCHelper_Example' do
+  pod 'TBCHelper', :path => '../'
+
+  target 'TBCHelper_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
