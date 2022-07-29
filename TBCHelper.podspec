@@ -18,14 +18,14 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+                  TBCHelper.
                        DESC
 
-  s.homepage         = 'https://github.com/13101267711/TBCHelper'
+  s.homepage         = 'https://github.com/julienGit/TBCHelper'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '13101267711' => '13101267711' }
-  s.source           = { :git => 'https://github.com/13101267711/TBCHelper.git', :tag => s.version.to_s }
+  s.author           = { 'zy' => '15680075675@163.com' }
+  s.source           = { :git => 'https://github.com/julienGit/TBCHelper.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
@@ -39,4 +39,5 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Masonry'
 end

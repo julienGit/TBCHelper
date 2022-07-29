@@ -1,0 +1,27 @@
+{
+  "name": "TBCHelper",
+  "version": "0.1.0",
+  "summary": "A short description of TBCHelper.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/13101267711/TBCHelper",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "13101267711": "13101267711"
+  },
+  "source": {
+    "git": "https://github.com/13101267711/TBCHelper.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "TBCHelper/Classes/**/*",
+  "dependencies": {
+    "Masonry": [
+
+    ]
+  }
+}

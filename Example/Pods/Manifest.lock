@@ -1,0 +1,23 @@
+PODS:
+  - Masonry (1.1.0)
+  - TBCHelper (0.1.0):
+    - Masonry
+
+DEPENDENCIES:
+  - TBCHelper (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Masonry
+
+EXTERNAL SOURCES:
+  TBCHelper:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  TBCHelper: b7b27ae31c261302430bf1eafd6399453cde95e5
+
+PODFILE CHECKSUM: 3fce6483c3c74a0ecfbf4a11ba704eabfd9f1616
+
+COCOAPODS: 1.8.4

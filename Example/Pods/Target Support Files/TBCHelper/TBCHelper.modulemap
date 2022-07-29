@@ -1,0 +1,6 @@
+framework module TBCHelper {
+  umbrella header "TBCHelper-umbrella.h"
+
+  export *
+  module * { export * }
+}
