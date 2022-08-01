@@ -1595,4 +1595,143 @@ NSString * getSafeString(id object)
     [MBKeyChain deleteKeyData:MB_KEY_DEVICE];
     
 }
+
+
+/**
+
+   从身份证上获取年龄 18位身份证
+
+ */
+
+//-(NSString *)getIdentityCardAge:(NSString *)numberStr
+//{
+//    NSDateFormatter *formatterTow = [[NSDateFormatter alloc]init];
+//    [formatterTow setDateFormat:@"yyyy-MM-dd"];
+//    NSDate *bsyDate = [formatterTow dateFromString:[self birthdayStrFromIdentityCard:numberStr]];
+//    NSTimeInterval dateDiff = [bsyDate timeIntervalSinceNow];
+//    int age = trunc(dateDiff/(60*60*24))/365;
+//    return [NSString stringWithFormat:@"%d",-age];
+//
+//}
+
+ 
+
+ 
+
+//+ (NSString *)birthdayStrFromIdentityCard:(NSString *)numberStr
+//{
+//    NSMutableString *result = [NSMutableString stringWithCapacity:0];
+//    NSString *year = nil;
+//    NSString *month = nil;
+//    BOOL isAllNumber = YES;
+//    NSString *day = nil;
+//    if([numberStr length]<18)
+//        return result;
+//    //**从第6位开始 截取8个数
+//    NSString *fontNumer = [numberStr substringWithRange:NSMakeRange(6, 8)];
+//    //**检测前12位否全都是数字;
+//    const char *str = [fontNumer UTF8String];
+//    const char *p = str;
+//    while (*p != 48 )
+//    {
+//        if(!(*p >= 48 || *p <= 57))
+//        {
+//            isAllNumber = NO;
+//        }
+//        p++;
+//    }
+//    if(!isAllNumber){
+//            return result;
+//    }
+//    year = [NSString stringWithFormat:@"19%@",[numberStr substringWithRange:NSMakeRange(8, 2)]];
+//    //    NSLog(@"year ==%@",year);
+//    month = [numberStr substringWithRange:NSMakeRange(10, 2)];
+//    //    NSLog(@"month ==%@",month);
+//    day = [numberStr substringWithRange:NSMakeRange(12,2)];
+//    //    NSLog(@"day==%@",day);
+//    [result appendString:year];
+//    [result appendString:@"-"];
+//    [result appendString:month];
+//    [result appendString:@"-"];
+//    [result appendString:day];
+//    //    NSLog(@"result===%@",result);
+//    return result;
+//}
+
+ 
+
+ 
+
+ 
+
+/**
+
+ *  从身份证上获取性别
+
+ */
+
++ (NSString *)getIdentityCardSex:(NSString *)numberStr
+
+{
+    NSString *sex = @"";
+    //获取18位 二代身份证  性别
+    if (numberStr.length==18)
+    {
+        int sexInt=[[numberStr substringWithRange:NSMakeRange(16,1)] intValue];
+        if(sexInt%2!=0)
+        {
+            NSLog(@"1");
+            sex = @"男";
+            
+            
+        }
+        else
+        {
+            NSLog(@"2");
+            sex = @"女";
+        }
+        
+        
+    }
+    
+    
+    //  获取15位 一代身份证  性别
+    
+    if (numberStr.length==15)
+    {
+        
+        
+        int sexInt=[[numberStr substringWithRange:NSMakeRange(14,1)] intValue];
+        
+        if(sexInt%2!=0)
+        {
+            NSLog(@"1");
+            sex = @"男";
+        }
+        else
+        {
+            NSLog(@"2");
+            sex = @"女";
+        }
+        
+        
+    }
+    
+    return sex;
+    
+    
+}
+
+
++ (NSArray *)sortParamsWithOptions:(NSInteger )options params:(NSDictionary *)params{
+    NSArray * array = [params allKeys];
+    
+    NSStringCompareOptions comparisonOptions = NSCaseInsensitiveSearch|NSNumericSearch|NSWidthInsensitiveSearch| NSForcedOrderingSearch;
+    NSComparator sort = ^(NSString * obj1 , NSString * obj2){
+        NSRange range = NSMakeRange(0, obj1.length);
+        return [obj1 compare:obj2 options:comparisonOptions range:range];
+    };
+    NSArray * resultArr = [array sortedArrayUsingComparator:sort];
+    return  resultArr;
+}
 @end

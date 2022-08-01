@@ -359,6 +359,16 @@ sha1 计算
 
 + (NSString *)getDeviceID;
 + (void)removeDeviceID;
+
+/**
+
+ *  从身份证上获取性别
+
+ */
+
++(NSString *)getIdentityCardSex:(NSString *)numberStr;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
